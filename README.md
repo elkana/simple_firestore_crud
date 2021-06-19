@@ -4,13 +4,13 @@ flutter create --org com.eric -i objc -a java firestore_crud
 
 flutter build apk --release
 ```
-* no need to create google_services
-* create database here https://console.firebase.google.com/u/0/project/flutterproject-57085/firestore
 
+* choose a project in https://console.firebase.google.com/u/0/ 
+* Register new App with package `com.eric.firestore_crud`
 * get file `google_services.json` at https://console.firebase.google.com/u/0/project/flutterproject-57085/overview
-* per 17 juni 21, minimum Android SDK is 23
+* per 19 juni 21, minimum Android SDK is 23
 * drop it into `android/app`
-* WAJIB buat SHA fingerprint di package yg udah ditentukan (misal `com.eric.firebase_login`). SHA-1 ini merujuk pada file keystore **DEBUG** atau **PROD** jd pastikan dulu file `.keystore` yg mau diregister.
+* WAJIB buat SHA fingerprint di package yg udah ditentukan (misal `com.eric.firestore_crud`). SHA-1 ini merujuk pada file keystore **DEBUG** atau **PROD** jd pastikan dulu file `.keystore` yg mau diregister.
 Kalau debug, flutter menggunakan file yg sama dengan Android Studio.
 
 To get fingerprint, run following :
@@ -25,9 +25,14 @@ Certificate fingerprints:
 ```
 COPAS the value of SHA1 to related package, ex: `com.eric.firebase_login` :
 ```
-https://console.firebase.google.com/u/0/project/flutterproject-57085/settings/general/android:com.eric.firebase_login
+https://console.firebase.google.com/u/0/project/flutterproject-57085/settings/general/android:com.eric.firestore_crud
 ```
 Dont forget to SAVE !
+
+* Finally, create database here https://console.firebase.google.com/u/0/project/flutterproject-57085/firestore
+
+---
+## Android Native Setup
 
 android/app/build.gradle
 ```
@@ -53,14 +58,8 @@ buildscript {
     }
 ```
 
-* goto https://console.firebase.google.com/u/0/project/flutterproject-57085/authentication/providers
-    * enable Email/Password
-    * enable Google
-    * ~~enable Facebook~~
-
-
 ---
-## pubspec.yml per 18-Jun-21
+## pubspec.yml per 19-Jun-21
 ```
   firebase_core:
   cloud_firestore:
